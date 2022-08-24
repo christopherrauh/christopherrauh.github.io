@@ -35,6 +35,24 @@ I had access to three data sets:
 
 ## Part I - Price development throughout the year
 
+The calendar data set shows the listings (identified by listing id), the date, the availability, and the price per day for each listing. It spans over a year 2016-01-04 until 2017-01-02 and shows the availability per listing during that year.
+
+Do the prices fluctuate? Let us check a sample listing from the data set.
+
+Taking a random id shows a contant price whenever the listing is available. 
+
+```
+	listing_id	date	available	price
+0	241032	2016-01-04	t	$85.00
+1	241032	2016-01-05	t	$85.00
+2	241032	2016-01-06	f	NaN
+3	241032	2016-01-07	f	NaN
+4	241032	2016-01-08	f	NaN
+```
+Still there is hope that there is some fluctuation, so let us analyze the complete set of data. In case there wasn't any fluctuation, the average price per day (considering all listings) would remain stable.
+
+After taking the days' avaerage price values after performing some data cleansing, I get the following graph: 
+
 ![Prices per day](../images/price_per_day.png)
 
 Takeaways from this images:

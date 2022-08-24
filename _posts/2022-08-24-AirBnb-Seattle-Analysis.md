@@ -61,7 +61,7 @@ There seems to be **great deviations** within short periods of time, within week
 
 This is done - similar to the well known Covid infection numbers - by applying a rolling average of 7 days for each day - meaning that every entry represents the mean value of the day itself, the preceeding three days and the following three days.
 
-he corresponding graph shows a **much smoother line** that shows some **clear trends**:
+The corresponding graph displays a **much smoother line** that shows some **clear trends**:
 
 ![Smoothed](../images/rolling_price_per_day.png)
 

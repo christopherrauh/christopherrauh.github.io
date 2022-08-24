@@ -3,7 +3,10 @@ title: How Do you make the most out of AirBnb?
 ---
 
 ![Beautiful Seattle](../images/seattle.jpg)
-### Analyzing AirBnb's Seattle data from the perspective of a visitor and AirBnb marketing
+
+---
+Analyzing AirBnb's Seattle data from the perspective of a visitor and AirBnb marketing
+---
 
 ## Introduction
 

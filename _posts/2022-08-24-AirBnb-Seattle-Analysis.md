@@ -112,7 +112,41 @@ Major takeaways are:
 ## Part III - Reviews, How active are the users
 
 Finally I want to learn about the most active reviewers. Is there a **significant amount of guests who keep returning** to the Seattle area many times a year? 
-These guests could be interesting for marketing activities as they might have a positive impact on prospective AirBnb customers with positive reviews. As I thrifty traveller I would also be interested to enjoy some benefits. 
+These guests could be interesting for marketing activities as they might have a positive impact on prospective AirBnb customers with positive reviews. As I thrifty traveller I would also be interested to enjoy some benefits.
+
+In order to come to a result I have to investigate the reviews data set. I group the reviews by reviewer and count the number of reviews. The result will once again be grouped such that there is...
+
+...a group of people who wrote one review
+...a group of people who wrote two reviews
+etc
+
+```
+review_count number_of_reviewers	
+1	69381
+2	4933
+3	877
+4	269
+5	110
+6	66
+7	36
+8	13
+9	14
+10	5
+11	8
+12	5
+13	3
+14	3
+16	1
+17	1
+18	1
+19	2
+32	1
+67	1
+``` 
+
+There is even a reviewer who wrote 67 reviews in one year!
+
+
 
 ![Review Counts](../images/review_counts.png)
 

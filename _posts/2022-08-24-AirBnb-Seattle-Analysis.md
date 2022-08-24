@@ -111,7 +111,8 @@ Major takeaways are:
 
 ## Part III - Reviews, How active are the users
 
-Finally I want to learn about the most active reviewers 
+Finally I want to learn about the most active reviewers. Is there a **significant amount of guests who keep returning** to the Seattle area many times a year? 
+These guests could be interesting for marketing activities as they might have a positive impact on prospective AirBnb customers with positive reviews. As I thrifty traveller I would also be interested to enjoy some benefits. 
 
 ![Review Counts](../images/review_counts.png)
 

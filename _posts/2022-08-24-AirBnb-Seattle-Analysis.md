@@ -57,10 +57,19 @@ After taking the days' avaerage price values after performing some data cleansin
 
 Takeaways from this images:
 
+There seems to be **great deviations** within short periods of time, within weeks. To see trends over larger period of time, the data must be smoothed. 
+
+This is done - similar to the well known Covid infection numbers - by applying a rolling average of 7 days for each day - meaning that every entry represents the mean value of the day itself, the preceeding three days and the following three days.
+
+he corresponding graph shows a **much smoother line** that shows some **clear trends**:
+
 ![Smoothed](../images/rolling_price_per_day.png)
 
-Takeaways from this images:
+*** Conclusions
 
+- Generally prices **do deviate** throuout the year.
+- Prices start to **increase in spring and reach climax in the summer months**. They will drop in the fall and will increase at the end of the year.
+- The general level of AirBnb home prices in Seattle  seem to have **become higher during 2016**  
 
 
 ## Part II - Most sought after neighborhoods

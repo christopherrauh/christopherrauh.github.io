@@ -6,17 +6,18 @@ title: How Do you make the most out of AirBnb?
 
 ---
 Analyzing AirBnb's Seattle data from the perspective of a visitor and AirBnb marketing
+
 ---
 
 ## Introduction
 
 AirBnb has been an alternative to the traditional hospitality business for a while now. It has started on a very low level, the "air" in AirBnb represents an inflatable mattress that the initial users wanted to rent out in order to make an additional buck. 
 
-Nowadays AirBnb offers a wide range of homes in cities across the planet including luxury homes at a high price. It has become quite a challenge to find really good deals, especially since so many people use the service.
+Nowadays AirBnb offers a wide range of homes in cities across the planet including luxury homes at a high price. It has become quite a **challenge to find really good deals**, especially since so **many people use the service**.
 
-Seattle is quite an expensive city, and, of course, AirBnb provides homes here as well. Being a thrifty person, wouldn't it be great to get access to AirBnb's internal data, analysze the data, and learn about the most affordable times to visit the city and find a moderately priced neighborhood?
+Seattle is a quite expensive city, and, of course, AirBnb provides homes here as well. Being a thrifty person, wouldn't it be great to get access to AirBnb's internal data, analysze the data, and learn about the most affordable times to visit the city and find a moderately priced neighborhood?
 
-Also, for so many people using AirBnb as a service, it would make sense for AirBnb to utilize the power users, i.e. users who frequently stay in Seattle and write reviews. If there is significant output, these users could be turned into some kind of brand ambassadors and contribute to AirBnb's success. Always looking for a good deal, I would be happy to become a brand ambassador myself.
+Also, for so many people using AirBnb as a service, it would make sense for AirBnb to utilize the power users, i.e. users who frequently stay in Seattle and write reviews. If there is significant output, these users could be turned into some kind of brand ambassadors and **contribute to AirBnb's success**. Always looking for a good deal, I would be happy to become a brand ambassador myself.
 
 ### Available data
 
@@ -144,10 +145,25 @@ review_count number_of_reviewers
 67	1
 ``` 
 
-There is even a reviewer who wrote 67 reviews in one year!
+*There is even a reviewer who wrote 67 reviews in one year!*
 
-
+The following graph shows the different ureviewers and their review-frequency (*that directly corresponds with their travel pattern*) quite nicely.
 
 ![Review Counts](../images/review_counts.png)
 
-## Conclusion and what can we do next?
+The **overwhelming** amount of visitors write **only one** review in a year (91,62%) with the number for two or three reviews per year being **low already** (6.51% and 1.15%). Only very few people write a high amount of reviews (in total less than 1%).
+
+Targetting these users with specific marketing measures doesn't seem to make much sense unfortunatley.
+
+## Conclusion and what can you do next?
+
+If I want to spend as little as possible visiting Seattle by booking an AirBnb home I should visit early in the year and look for a home in Delridge. Unfortunately it doesn't make much sense to set up a brand ambassador program as there are only few candidates. But being aware of that has value in itself, right?
+
+The amount of possibilities for analyzing the data are nearly endless. Going from here how would you refine the analysis?
+
+Maybe it makes sense to
+
+- compare similar listings (similar size etc.) in different neighborhoods, not just the general average.
+- have a closer look at deviations within a shorter timeframe.
+
+What do you think?

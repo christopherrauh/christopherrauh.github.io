@@ -65,7 +65,7 @@ The corresponding graph displays a **much smoother line** that shows some **clea
 
 ![Smoothed](../images/rolling_price_per_day.png)
 
-*** Conclusions
+### Conclusions
 
 - Generally prices **do deviate** throughout the year.
 - Prices start to **increase in spring and reach climax in the summer months**. They will drop in the fall and will increase at the end of the year.

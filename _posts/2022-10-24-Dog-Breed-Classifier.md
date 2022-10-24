@@ -161,12 +161,55 @@ This is better than a random guess - _with 133 dog breeds, a random guess would 
 
 ### Use a pretrained Network for Feature Extraction
 
+In order to achieve better results, we will use a heavily pretrained CNN with a larger amount of nodes.
+
+There are multiple pretrained networks available, we choose a VGG-19 architechture.
+
+Its characteristics are generally: 19 layers (16 convolution layers, 3 Fully connected layer, 5 MaxPool layers and 1 SoftMax layer. 
+
+We complete the feature extraction part with the following components:
+- GlobalAveragePooling Layer
+- Dense Layer / Dropout Layer: To add some randomness in order to avoid overfitting, i.e. the issue of specializing too much on the training data set
+- Dense Layer with SoftMax activation 
+
+The classification part looks like this:
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+global_average_pooling2d_6 ( (None, 512)               0         
+_________________________________________________________________
+dense_9 (Dense)              (None, 128)               65664     
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 128)               0         
+_________________________________________________________________
+dense_10 (Dense)             (None, 133)               17157     
+=================================================================
+Total params: 82,821
+Trainable params: 82,821
+Non-trainable params: 0
+_________________________________________________________________
+
+```
+This model reaches an accuracy of 72% after training it for 20 epochs.
+
 ### Putting it together and running it 
 
+Here are examples of images of dogs  that have been used for testing and their prediction:
 
 ![Classified Dogs](../images/dog_estimate.png)
 
+That looks pretty good. Both the breeds are correct, so the classifier seems to be usable for dogs.
+
+But how are humans classified? How do their facial features correspond to those of dogs?
+
+Here comes the classification for some human faces:
+
 ![Classified Humans](../images/human_estimate.png)
+
+And as a reference here are the similar doog breeds:
+
+![Dog References](../images/references.png)
 
 ## Conclusions and what to do next
 

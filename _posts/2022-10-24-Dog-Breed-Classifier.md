@@ -193,7 +193,35 @@ _________________________________________________________________
 ```
 This model reaches an accuracy of 72% after training it for 20 epochs.
 
-### Putting it together and running it 
+### Putting it together and running it
+
+Finally we create a function that first checks if a dog is in the image by invoking the dog detector.
+
+If a dog has been found, then the pretrained network will be used to find the actual breed.
+
+If no dog was found, a check for a human will be performed by using the human face detector. 
+
+If neither a dog nor a human was present in the picture, an error message is thrown.
+
+The simple code:
+
+```
+def classify_image(img_path):
+    
+    result = ""
+    # check if dog 
+    if (dog_detector(img_path)):
+        result = predict_dog_breed(img_path)
+    else:
+        # if not a dog, perhaps a human face
+        if(face_detector(img_path)):
+            result = ("A human who looks like a {}".format(predict_dog_breed(img_path)))
+        else:
+            # not a dog, not a human
+            result = 'Neither human nor dog could be found.'
+            
+    return result
+```
 
 Here are examples of images of dogs  that have been used for testing and their prediction:
 
@@ -211,7 +239,29 @@ And as a reference here are the similar doog breeds:
 
 ![Dog References](../images/references.png)
 
-## Conclusions and what to do next
+Dear reader, please judge for yourself - do you think these humans resemble the estimated dogs?
+
+## Conclusions 
+
+We developed an application to predict dog breeds taking images of dogs and humans.
+
+We applied two different technologies to detect the presence of either dogs or humans in the images.
+
+We used CNNs - one from scratch and one using a large pretrained feature extractor - to predict dog breeds. Using the pretrained feature extractor provided a massive improvement and resulted in a usable dog classifier.
+
+Estimating dog breeds for human faces is fun, but the result is not very conclusive.
+
+### What could be improved.
+
+From the pretrained models we could have tested all of the available ones. Maybe ResNet-50, Inception or Xception would yield better results. We could have used different pretrained models for humans and dogs. Maybe one of these models would have worked better on the classification of human faces even though we did not use humans as input.
+
+Preprocessing / augmenting the images for classification (not training): Crop images to the bounding boxes that we can produce in OpenCV. That way we can remove noise from the background. We could also classify multiple dogs in one image if there are multiple ones depicted.
+
+Present the likelihood to the user. Right now we only show the most likely dog breed. In case the output vector has a lot of similar values (i.e. there are multiple candidates), this information could also be useful. If the result is ambiguous, another model architecture could be used.
+
+We could train the model with adding some noise, i.e. for instance randomly rotating images by some degrees and similar operations. This way, we can avoid overfitting. Right now we are only using a dropout layer.
+
+In order to substantially improve the human/dog breed matching, we would need labelled training data - something that would be difficult to obtain without a lot of manual work.
 
 ## Reference 
 

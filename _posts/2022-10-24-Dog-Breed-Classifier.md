@@ -115,14 +115,11 @@ As a next step in the evolution we want to use a CNN from scratch using Keras in
 A CNN classifier uses the following approach:
 
 1. Hierarchical spacial features are extracted 
+2. The resulting output - i.e. which features have been recognized is then classified and the most likely value is calculated by a softmax layer.
 
-the way Hierarchical spacial features can be imagined is visualized in this picture taken from "Deep Learning with Python", by Francois Chollet.
+The way hierarchical spacial features can be imagined is visualized in this picture taken from "Deep Learning with Python", by Francois Chollet.
 
 ![](images/cat-features.png)
-
-
-
-2. The resulting output - i.e. which features have been recognized is then classified and the most likely value is calculated by a softmax layer.
 
 The feature extraction part is basically a stack of Conv2D and MaxPooling2D layers. 
 

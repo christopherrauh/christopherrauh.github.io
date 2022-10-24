@@ -32,7 +32,7 @@ The most important components are OpenCV and Keras.
 We are using OpenCV's [Haar feature based cascade classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html) to detect if an image contains a human face or not. Since our input images contain either dogs or human faces this is a first step to reach our goal.
 
 ### Keras 
-[Keras](https://keras.io/) is a deep learning framework written in Python. It can be used to create Neural Networks in arelatively simple fashion ("Deep learning for humans" is one of their sloagans). However, Keras itself is not sufficient, for the actual execution (training and inference) of neural networks, a backend is needed. In our case (i.e. the Udacity lab environment), Tensorflow is used as the backend.
+[Keras](https://keras.io/) is a deep learning framework written in Python. It can be used to create Neural Networks in a relatively simple fashion ("Deep learning for humans" is one of their sloagans). However, Keras itself is not sufficient, for the actual execution (training and inference) of neural networks, a backend is needed. In our case (i.e. the Udacity lab environment), Tensorflow is used as the backend.
 
 Keras comes with a number of tools to process data and even provides a large number of pretrained models.
 
@@ -44,7 +44,6 @@ We are using Keras in the following areas:
 - use a large pretrained model (one of VGG-19, ResNet-50, Inception, Xception)
 - perform training, validation and prediction
 
-![Prices per day](../images/price_per_day.png)
 
 ## Steps in the development
 
@@ -101,4 +100,33 @@ It is already trained on Imagenet (a huge collection of pictures) and produces r
 267: 'standard poodle',
 268: 'Mexican hairless',
 ```
+
+This new dog detector yields much better results:
+
+```
+detection rate for dog faces in human pictures:  0.0 %
+detection rate for dog faces in dog pictures:  100.0 %
+```
+
+### Dog Classifier from Scratch
+
+As a next step in the evolution we want to use a CNN from scratch using Keras in order to classify dog images.
+
+A CNN classifier uses the following approach:
+
+1. Hierarchical spacial features are extracted 
+
+the way Hierarchical spacial features can be imagined is outlined in this picture
+
+![](cat-features.png)
+
+(from "Deep Learning with Python", by Francois Chollet)
+
+2. The resulting output - i.e. which features have been recognized is then classified and the most likely value is calculated by a softmax layer.
+
+The feature extraction part is basically a stack of Conv2D and MaxPooling2D layers. 
+
+- Conv2D layers: Perform the mathematical operation of convolution is between the input image and a filter of a particular size MxM. By sliding the filter over the input image, the dot product is taken between the filter and the parts of the input image with respect to the size of the filter (MxM).
+- MAxPooling2D layers: A Convolutional Layer is usually followed by a Pooling Layer. The primary aim of this layer is to decrease the size of the convolved feature map to reduce the computational costs. This is performed by decreasing the connections between layers and independently operates on each feature map.
+
 ## Conclusions and what to do next

@@ -124,6 +124,52 @@ The way hierarchical spacial features can be imagined is visualized in this pict
 The feature extraction part is basically a stack of Conv2D and MaxPooling2D layers. 
 
 - Conv2D layers: Perform the mathematical operation of convolution is between the input image and a filter of a particular size MxM. By sliding the filter over the input image, the dot product is taken between the filter and the parts of the input image with respect to the size of the filter (MxM).
-- MAxPooling2D layers: A Convolutional Layer is usually followed by a Pooling Layer. The primary aim of this layer is to decrease the size of the convolved feature map to reduce the computational costs. This is performed by decreasing the connections between layers and independently operates on each feature map.
+- MaxPooling2D layers: A Convolutional Layer is usually followed by a Pooling Layer. The primary aim of this layer is to decrease the size of the convolved feature map to reduce the computational costs. This is performed by decreasing the connections between layers and independently operates on each feature map.
+
+The resulting, relatively simple network looks like this:
+
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 223, 223, 16)      208       
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 111, 111, 16)      0         
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 110, 110, 32)      2080      
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 55, 55, 32)        0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 54, 54, 64)        8256      
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 27, 27, 64)        0         
+_________________________________________________________________
+global_average_pooling2d_1 ( (None, 64)                0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 133)               8645      
+=================================================================
+Total params: 19,189
+Trainable params: 19,189
+Non-trainable params: 0
+_________________________________________________________________
+```
+This network is quite small. 
+
+Training for 10 epoch leads to an accuracy of 4.3062% 
+
+This is better than a random guess - _with 133 dog breeds, a random guess would be below 1%_ - but still this is not good enough.
+
+### Use a pretrained Network for Feature Extraction
+
+### Putting it together and running it 
+
+
+![Classified Dogs](../images/dog_estimate.png)
+
+![Classified Humans](../images/human_estimate.png)
 
 ## Conclusions and what to do next
+
+## Reference 
+
+For a detailed look at the code, please have a look at the Github repository at [https://github.com/christopherrauh/udacity_dsnd_capstone/](https://github.com/christopherrauh/udacity_dsnd_capstone/)

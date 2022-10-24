@@ -11,13 +11,13 @@ Using advanced Deep Neural Networks to identify Dog Breeds
 
 ## Introduction
 
-This article outlines the development of a dog breed classifier using convolutional neural networks in Python and how to get to substantially improve the result. A special focus will be on the usage of pretrained neural networks.
+This article outlines the development of a dog breed classifier using convolutional neural networks in Python and how to substantially improve the result step by step. A special focus will be on the usage of pretrained neural networks.
 
 We will be working with input images that contain either _human faces_ or _dogs_. 
 
 For dogs we want to find the correct breed, for humans we want to find a dog breed that somehow resembles this human.
 
-The classification will first have to distinguish between humans and dogs - _using different approaches_ - and then finds the corresponding dog breed - _using the same approach for both humans and dogs_.
+The classification will first have to distinguish between humans and dogs - _using different approaches_ - and will then find the corresponding dog breed - _using the same approach for both humans and dogs_.
 
 ### Technical Background
 
@@ -231,11 +231,11 @@ That looks pretty good. Both the breeds are correct, so the classifier seems to 
 
 But how are humans classified? How do their facial features correspond to those of dogs?
 
-Here comes the classification for some human faces:
+This is the prediction for some human faces:
 
 ![Classified Humans](../images/human_estimate.png)
 
-And as a reference here are the similar doog breeds:
+And as a reference these are the similar doog breeds:
 
 ![Dog References](../images/references.png)
 
@@ -248,6 +248,8 @@ We developed an application to predict dog breeds taking images of dogs and huma
 We applied two different technologies to detect the presence of either dogs or humans in the images.
 
 We used CNNs - one from scratch and one using a large pretrained feature extractor - to predict dog breeds. Using the pretrained feature extractor provided a massive improvement and resulted in a usable dog classifier.
+
+Using Keras as framework is surpringly easy.
 
 Estimating dog breeds for human faces is fun, but the result is not very conclusive.
 

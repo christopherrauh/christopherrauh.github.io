@@ -119,7 +119,7 @@ A CNN classifier uses the following approach:
 
 The way hierarchical spacial features can be imagined is visualized in this picture taken from "Deep Learning with Python", by Francois Chollet.
 
-![](images/cat-features.png)
+![](../images/cat-features.png)
 
 The feature extraction part is basically a stack of Conv2D and MaxPooling2D layers. 
 

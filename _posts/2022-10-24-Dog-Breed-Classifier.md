@@ -32,10 +32,73 @@ The most important components are OpenCV and Keras.
 We are using OpenCV's [Haar feature based cascade classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html) to detect if an image contains a human face or not. Since our input images contain either dogs or human faces this is a first step to reach our goal.
 
 ### Keras 
+[Keras](https://keras.io/) is a deep learning framework written in Python. It can be used to create Neural Networks in arelatively simple fashion ("Deep learning for humans" is one of their sloagans). However, Keras itself is not sufficient, for the actual execution (training and inference) of neural networks, a backend is needed. In our case (i.e. the Udacity lab environment), Tensorflow is used as the backend.
+
+Keras comes with a number of tools to process data and even provides a large number of pretrained models.
+
+We are using Keras in the following areas:
+
+- a ResNet model that has been trained on ImageNet, a wide collection of images.
+- the preprocessing cpapbilities to load images
+- create the CNN based neural networks
+- use a large pretrained model (one of VGG-19, ResNet-50, Inception, Xception)
+- perform training, validation and prediction
 
 ![Prices per day](../images/price_per_day.png)
 
+## Steps in the development
 
-### 
+### Human detector
 
+In order to detect human faces, the OpenCV's Haar feature based classifier is used. If the classifier doesn't find any face in the picture, we will assume the picture in question doesn't show a human.
+
+Applying this strategy to our test set of humans and dogs produces the follwoing result:
+
+```
+detection rate for human faces:  100.0 %
+detection rate for human faces in dog pictures:  11.0 %
+```
+
+This means that we have about 11% of false positives. So we should apply a better approach to be sure that a dog is recognized as a dog and not as a human.
+
+### Dog detector
+
+In order to more reliably detect dogs, we are using the ResNet50 network that can be simply loaded from Keras. 
+
+```
+from keras.applications.resnet50 import ResNet50
+
+# define ResNet50 model
+ResNet50_model = ResNet50(weights='imagenet')
+Downloading data from https://github.com/fchollet/deep-learning-models/releases/download/v0.2/resnet50_weights_tf_dim_ordering_tf_kernels.h5
+102858752/102853048 [==============================] - 1s 0us/step
+```
+
+It is already trained on Imagenet (a huge collection of pictures) and produces results according to a predefined dictionary. The entries from 151 to 268 correspond to dog breeds:
+
+
+
+```
+151: 'Chihuahua',
+152: 'Japanese spaniel',
+153: 'Maltese dog, Maltese terrier, Maltese',
+154: 'Pekinese, Pekingese, Peke',
+155: 'Shih-Tzu',
+156: 'Blenheim spaniel',
+157: 'papillon',
+158: 'toy terrier',
+159: 'Rhodesian ridgeback',
+160: 'Afghan hound, Afghan',
+161: 'basset, basset hound',
+...
+...
+...
+262: 'Brabancon griffon',
+263: 'Pembroke, Pembroke Welsh corgi',
+264: 'Cardigan, Cardigan Welsh corgi',
+265: 'toy poodle',
+266: 'miniature poodle',
+267: 'standard poodle',
+268: 'Mexican hairless',
+```
 ## Conclusions and what to do next

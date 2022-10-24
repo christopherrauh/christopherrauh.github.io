@@ -116,11 +116,11 @@ A CNN classifier uses the following approach:
 
 1. Hierarchical spacial features are extracted 
 
-the way Hierarchical spacial features can be imagined is outlined in this picture
+the way Hierarchical spacial features can be imagined is visualized in this picture taken from "Deep Learning with Python", by Francois Chollet.
 
-![](cat-features.png)
+![](images/cat-features.png)
 
-(from "Deep Learning with Python", by Francois Chollet)
+
 
 2. The resulting output - i.e. which features have been recognized is then classified and the most likely value is calculated by a softmax layer.
 

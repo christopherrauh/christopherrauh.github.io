@@ -235,7 +235,7 @@ This is the prediction for some human faces:
 
 ![Classified Humans](../images/human_estimate.png)
 
-And as a reference these are the similar doog breeds:
+And as a reference these are the similar dog breeds:
 
 ![Dog References](../images/references.png)
 
